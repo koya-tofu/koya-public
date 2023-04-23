@@ -3,7 +3,7 @@
 ## Functions
 - use bibLaTeX to manage cites 
 - modify some fields 
-- modify name style in Japanese (should be langid={japanese} in .bib) <br>
+- modify name style in Japanese 
   
 
 ## Usage
@@ -13,4 +13,5 @@ If you have installed TeXLive, it should work with no further installation.
 
 ### Some modifications
 - Change "cites.bib" in bibaless.tex to your bib file name. 
-- Change authors'name in .bib like this: author = {Yukawa, H. [湯川秀樹] and Nagaoka, H. [長岡半太郎]}
+- Add "langid" field to your references and set it to "japanese" (so add "langid={japanese}" in your bib file). Then change authors'name in .bib like this: <br> 
+  author = {Yukawa, H. [湯川秀樹] and Nagaoka, H. [長岡半太郎]}
