@@ -1,0 +1,40 @@
+\usepackage[style=apa6,autolang=other]{biblatex}
+\addbibresource{cites.bib}
+
+\AtEveryBibitem{%
+  %  clear some fields
+  \clearfield{isbn}
+  \clearlist{location}
+  \clearfield{url}
+  \clearfield{eprint}
+  
+  % change order of Japanese name
+  \iffieldequalstr{langid}{japanese}{%
+  \DeclareNameFormat{apaauthor}{%
+  \ifthenelse{\value{listcount}=\maxprtauth\AND\value{listcount}<\value{listtotal}}
+    {\addcomma\space\ldots\space}
+    {\ifthenelse{\value{listcount}>\maxprtauth\AND\value{listcount}<\value{listtotal}}
+      {}
+      {\iffieldannotation{uncertain}
+        {\mkbibbrackets{\usebibmacro{name:apa:family-given}%
+                         {\namepartfamily}%
+                         {\namepartgiven}%
+                         {\namepartgiveni}%
+                         {\namepartprefix}%
+                         {\namepartsuffix}?}}
+        {\usebibmacro{name:apa:family-given}%
+          {\namepartfamily}%
+          {\namepartsuffix}%
+          {\namepartsuffixi}%
+          {\namepartprefix}%
+          {\namepartgiven}}}}%
+    \ifthenelse{\value{listcount}=\value{listtotal}}%
+      {\ifmorenames{\printdelim{andothersdelim}\bibstring{andothers}}{}}{}}
+      
+    }
+}{}%
+
+\DeclareFieldFormat*{journaltitle}{\mkbibitalic{#1}}%
+
+
+
