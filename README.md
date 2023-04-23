@@ -1,2 +1,2 @@
 # koya-s-public
-I will upload stuffes I create
+Some stuffes I created may be uploaded
