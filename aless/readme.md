@@ -1,8 +1,16 @@
 # TeX file for ALESS report 
+
+## Functions
+- use bibLaTeX to manage cites 
+- modify some fields 
+- modify name style in Japanese (should be langid={japanese} in .bib) <br>
+  
+
 ## Usage
+### Installation
 Put this in your directory that is same with your report TeX file and add line as: \input{bibaless.tex} <br>
-If you have installed TeXLive, it should work with no further operation.
-## Function
-use bibLaTeX to manage cites <br>
-modify some fields <br>
-modify name style in Japanese (should be langid={japanese} in .bib) <br>
+If you have installed TeXLive, it should work with no further installation.
+
+### Some modifications
+- Change "cites.bib" in bibaless.tex to your bib file name. 
+- Change authors'name in .bib like this: author = {Yukawa, H. [湯川秀樹] and Nagaoka, H. [長岡半太郎]}
